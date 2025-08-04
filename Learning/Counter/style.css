@@ -1,0 +1,50 @@
+body{
+    position: relative;
+    background-color: #12111a;
+    font-family: Helvetica;
+    font-size: 3em;
+    font-weight: 200;
+    color: rgb(48, 233, 233);
+}
+
+.counter{
+    display: block;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, 0);
+    font-size: 2em;
+}
+
+.button-container{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    width: 25%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 10px;
+    
+}
+
+.button{
+    display: block;
+    width: 10ch;
+    font-family: Helvetica;
+    font-weight: 300;
+    font-size: 0.4em;
+    border-radius: 10px;
+    background-color: rgb(73, 33, 185);
+    color: cyan;
+    border: solid 0 black;
+    transition: all 0.2s linear;
+}
+
+.button:hover{
+    background-color: rgb(32, 8, 97);
+    border: solid 2px black;
+}

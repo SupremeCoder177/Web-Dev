@@ -1,0 +1,37 @@
+body{
+    position: relative;
+    background-color: #c9a667;
+}
+
+.title-container{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #630d8b;
+    border: solid 3px black;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.title{
+    font-family: Helvetica;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.points-input-container{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    margin: 2em;
+    font-family: sans-serif;
+    font-size: 2rem;
+}
+
+.play{
+    display: flex;
+    flex-direction: column;
+    
+}
