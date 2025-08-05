@@ -1,7 +1,6 @@
-{
-    "John Doe" : 28,
-    "Sara Smith" : 21,
-    "Micheal Denvers" : 20,
-    "Don Beaver" : 21,
-    "Al Mike" : 22
-}
+[
+    {"name" : "John Doe", "age" : 28},
+    {"name" : "Sara Smith", "age" : 23},
+    {"name" : "Michael Kane", "age" : 21},
+    {"name" : "Alan Jones", "age" : 39}
+]
