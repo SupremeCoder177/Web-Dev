@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #121212;
+}
+
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    margin: 20px;
+}
+
+.card{
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    height: 300px;
+    background-color: #000000;
+    border: cyan solid 2px;
+    border-radius: 20px;
+    justify-content: space-between;
+    animation: shadow 10s linear infinite;
+    transition: all 0.5s ease-out;
+}
+
+.card-label{
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    text-shadow: 0 0 10px white;
+    transition: inherit;
+}
+
+.card-image{
+    object-fit: contain;
+    object-position: right;
+    border-radius: inherit;
+    transition: inherit;
+}
+
+.card-image:hover{
+    transform: scale(1.2);
+    border-radius: 0px;
+}
+
+@keyframes shadow {
+    0%{
+        box-shadow:  0 0 20px cyan;
+    }
+    10%{
+        box-shadow: 0 0 20px rgb(0, 102, 255);
+    }
+    20%{
+        box-shadow: 0 0 20px rgb(4, 0, 255);
+    }
+    30%{
+        box-shadow: 0 0 20px rgb(89, 0, 255);
+    }
+    40%{
+        box-shadow: 0 0 20px rgb(174, 0, 255);
+    }
+    50%{
+        box-shadow: 0 0 20px rgb(255, 0, 179);
+    }
+    60%{
+        box-shadow: 0 0 20px rgb(174, 0, 255);
+    }
+    70%{
+        box-shadow: 0 0 20px rgb(89, 0, 255);
+    }
+    80%{
+        box-shadow: 0 0 20px rgb(4, 0, 255);
+    }
+    90%{
+        box-shadow: 0 0 20px rgb(0, 102, 255);
+    }
+    100%{
+        box-shadow:  0 0 20px cyan;
+    }
+}
