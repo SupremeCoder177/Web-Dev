@@ -1,37 +1,119 @@
+* {
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
-    position: relative;
-    background-color: #c9a667;
+    background-color: #121212;
+    font-family: Arial, Helvetica, sans-serif;
+    color: beige;
 }
 
 .title-container{
     position: relative;
-    left: 50%;
-    transform: translate(-50%, 0);
-    background-color: #630d8b;
-    border: solid 3px black;
-    border-radius: 10px;
     width: 50%;
-}
-
-.title{
-    font-family: Helvetica;
-    position: relative;
-    display: inline-block;
+    height: 100px;
+    background-color: black;
+    border: white solid 2px;
+    border-radius: 10px;
+    margin-top: 20px;
     left: 50%;
     transform: translate(-50%, 0);
+    box-shadow: 0 0 20px cyan;
+    transition: all 0.3s ease;
 }
 
-.points-input-container{
+#title{
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    color: cyan;
+    top: 25%;
+    text-align: center;
+    text-shadow: 0 0 10px white;
+}
+
+.title-container:hover{
+    box-shadow: 0 0 10px white;
+}
+
+#points{
+    margin: 20px;
+    position: relative;
     display: flex;
+    padding: 20px;
+    width: 60%;
+    height: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
     justify-content: center;
-    padding: 1rem;
-    margin: 2em;
-    font-family: sans-serif;
-    font-size: 2rem;
 }
 
-.play{
+#points-count{
+    position: inherit;
+    font-family: sans-serif;
+    font-size: 1em;
+    background-color: rgb(255, 252, 209);
+    color: #121212;
+    border: pink solid 2px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: 50px;
+    height: 20px;
+    align-self: center;
+}
+
+#ask{
+    position: inherit;
+    font-family: Arial;
+    align-self: center;
+    color: white;
+}
+
+#submit{
+    display: inline-block;
+    width: 10%;
+    height: 30px;
+    align-self: center;
+    color: black;
+    background-color: rgb(119, 144, 255);
+    border-radius: 10px;
+    border: darkblue solid 2px;
+    box-shadow: 0 0 10px cyan;
+    transition: all 0.4s ease;
+}
+
+#submit:hover{
+    text-shadow: 0 0 20px cyan;
+    transform: scale(1.1);
+}
+
+#submit:active{
+    transform: scale(0.9);
+}
+
+#play{
+    position: relative;
     display: flex;
     flex-direction: column;
-    
+    width: 50%;   
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+#play-label, #error-label {
+    font-family: sans-serif;
+    font-size: larger;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 10px white;
+    margin: 10px;
+}
+
+#user-input{
+    display: flex;
+    justify-content: center;
 }
