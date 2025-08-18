@@ -50,6 +50,8 @@ function getCompChoice(){
     }
     if(player_pts === compete_points){
         compete_points = 0;
+        player_pts = 0;
+        comp_points = 0;
         pointsSet = false;
         document.getElementById("play").innerHTML = `<label id="result"></label>`;
         document.getElementById("result").innerHTML = "You won! ✌";
