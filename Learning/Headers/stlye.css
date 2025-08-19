@@ -38,6 +38,12 @@ body {
     font-size: small;
     font-weight: 700;
     text-decoration: underline;
+    transition: all 100ms linear;
+}
+
+.header a:hover{
+    font-weight: bolder;
+    transform: scale(1.05);
 }
 
 .header button{
@@ -49,8 +55,9 @@ body {
     border: solid 2px rgb(253, 69, 12);
     color: aliceblue;
     box-shadow: 0 5px red;
+    transition: all 200ms linear;
 }
 
 .header button:active{
-    box-shadow: 0 0px red;
+    box-shadow: 0 10px red;
 }
