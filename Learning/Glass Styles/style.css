@@ -1,0 +1,53 @@
+*, *::after, *:hover, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgb(18, 20, 121), rgb(109, 114, 109));
+}
+
+.glass-box{
+    width: 340px;
+    height: 600px;
+    background-color: rgba(200, 200, 200, 0.3);
+    transition: all 200ms linear;
+    display: inline-block;
+    position: relative;
+}
+
+.glass-box:hover{
+    border: solid 1px white;
+}
+
+#box-1{
+    top: 10vh;
+    left: 10vw;
+}
+
+#box-2{
+    top: 5vh;
+    left: 10vw;
+}
+
+#box-3{
+    justify-self: center;
+    top: 10vh;
+}
+
+#box-4{
+    top: 20vh;
+    left: 10vw;
+}
+
+#box-5{
+    top: 0;
+    left: 4vw;
+}
