@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 150vh;
+    background: linear-gradient(to bottom, #90e3c9, #0c3d3f);
+    overflow: hidden;
+}
+
+.container .skills{
+    position: relative;
+    width: 250px;
+    height: 350px;
+    top: 400px;
+    left: 50%;
+    translate: -50% 0;
+    transform-style: preserve-3d;
+    transform: perspective(1000px)
+                rotateX(-12deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: spinner 20s linear infinite;
+}
+
+.container .skills .item{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: 
+        rotateY(calc((var(--index) - 1) * (360deg / var(--item-count))))
+        translateZ(350px);
+    z-index: 1;
+}
+
+.skills .item img{
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    transition: all 150ms linear;
+}
+
+.skills .item img:hover{
+    width: 110%;
+    height: 110%;
+}
+
+@keyframes spinner {
+    from{
+        transform: perspective(1000px) rotateY(0deg);
+    }to{
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+.skill-info{
+    display: grid;
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    width: 1400px;
+    height: 720px;
+    transform: translateX(-50%);
+    grid-template-columns: repeat(2, minmax(400px, 1fr));
+    grid-template-rows: repeat(2, 350px);
+    gap: 1rem;
+    z-index: 0;
+}
+
+.skill-info .info{
+    width: 70%;
+    height: 20%;
+    border-radius: 20px;
+    background-color: rgba(200, 200, 200, 0.5);
+    grid-area: var(--number) / var(--col) / calc(var(--number) + 1) / calc(var(--col) + 1);
+    margin: 1rem;
+    border: solid 1px black;
+    box-shadow: 0 0.8rem 0.5rem -0.25rem black;
+    align-content: center;
+}
+
+.content{
+    position: absolute;
+    top: 30vh;
+    justify-self: center;
+}
+
+.header{
+    position: relative;
+    top: 10vh;
+    justify-self: center;
+    width: 600px;
+    height: 300px;
+}
+
+.header .heading{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(200, 200, 200, 0.5);
+    border: solid 1px white;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px white;
+    align-content: center;
+    transition: all 100ms linear;
+}
+
+.heading h2{
+    text-align: center;
+    color: white;
+}
+
+.header .profile-pic{
+    position: absolute;   
+    justify-self: center;
+    top: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 20px black;
+}
+
+.profile-pic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.heading:hover{
+    box-shadow: 0 0 20px black;
+}
+
+h1 {
+    justify-self: center;
+}
