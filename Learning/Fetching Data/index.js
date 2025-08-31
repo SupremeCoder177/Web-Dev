@@ -24,10 +24,19 @@ window.addEventListener("DOMContentLoaded", () => {
 
 const addBtn = document.getElementById("add");
 addBtn.onclick = () => {
+    var name = "";
+    var age = 0;
     try{
-    const name = document.getElementById("nameInput").value;
-    const age = document.getElementById("ageInput").value;
+    name = document.getElementById("nameInput").value;
+    age = document.getElementById("ageInput").value;
     }catch(err){
         console.log(err);
     }
+    const table = document.querySelector("#table tbody");
+    const row = document.createElement("tr");
+    row.innerHTML = `
+        <td>${name}</td>
+        <td>${age}</td>
+    `
+    table.appendChild(row);
 }
