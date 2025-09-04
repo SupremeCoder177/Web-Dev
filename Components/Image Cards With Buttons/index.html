@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Cards With Buttons</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="img-with-btns">
+            <img src="Images/cool(1).jpg" class="card-img">
+            <span class="btn-span">
+            <button id="likes" class="card-btn">Like</button>
+            <button class="card-btn">Comment</button>
+            </span>
+        </div>
+
+        <div class="img-with-btns">
+            <img src="Images/cool(2).jpeg" class="card-img">
+            <span class="btn-span">
+            <button id="likes" class="card-btn">Like</button>
+            <button class="card-btn">Comment</button>
+            </span>
+        </div>
+
+        <div class="img-with-btns">
+            <img src="Images/cool(3).jpeg" class="card-img">
+            <span class="btn-span">
+            <button id="likes" class="card-btn">Like</button>
+            <button class="card-btn">Comment</button>
+            </span>
+        </div>
+
+        <div class="img-with-btns">
+            <img src="Images/cool(4).jpeg" class="card-img">
+            <span class="btn-span">
+            <button id="likes" class="card-btn">Like</button>
+            <button class="card-btn">Comment</button>
+            </span>
+        </div>
+
+        <div class="img-with-btns">
+            <img src="Images/cool(5).jpeg" class="card-img">
+            <span class="btn-span">
+            <button id="likes" class="card-btn">Like</button>
+            <button class="card-btn">Comment</button>
+            </span>
+        </div>
+
+        <div class="img-with-btns">
+            <img src="Images/cool(6).jpeg" class="card-img">
+            <span class="btn-span">
+            <button id="likes" class="card-btn">Like</button>
+            <button class="card-btn">Comment</button>
+            </span>
+        </div>
+    </div>
+
+    <script>
+        const likes = document.getElementById("likes");
+        likes.onclick = () => {
+            window.alert("Liked the photo");
+        }
+    </script>
+</body>
+</html>
