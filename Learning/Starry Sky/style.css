@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+}
+
+.stars{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.star{
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.7);
+    animation: twinkle 5s linear infinite alternate;
+}
+
+@keyframes twinkle {
+    0%{ opacity: 0.4; }
+    100%{ opacity: 1; }
+}
