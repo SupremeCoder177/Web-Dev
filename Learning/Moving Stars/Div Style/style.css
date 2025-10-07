@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{ overflow: hidden; }
+
+.container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+
+.star{
+    position: relative;
+    background-color: hsla(0, 0%, 100%, 1);
+    border-radius: 50%;
+    width: 1px;
+    height: 1px;
+    animation: twinkle 10s linear infinite alternate;
+}
+
+@keyframes twinkle {
+    0%{
+        opacity: 0.6;
+        box-shadow: 0 0 2px 1px hsla(0, 0%, 100%, 1);
+    }
+    100%{
+        opacity: 1;
+        box-shadow: 0 0 2px 3px hsla(0, 0%, 100%, 1);
+    }
+}
