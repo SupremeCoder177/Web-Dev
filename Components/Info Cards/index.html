@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Cards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        </div>
+
+    </div>
+    <script>
+        const container = document.querySelector(".container");
+        let cards = {
+            0 : {
+                name: "Another Life",
+                description : "A short story about a childhood couple, though they didn't see it coming, they end up dating lol.",
+                img_path : "Images/another-life.jpeg"
+            },
+            1 : {
+                name: "Future 2070",
+                description : "In the future where AI takes over the world and the normal blah blah blah, a cyborg kid tries to save a dying world.",
+                img_path : "Images/future.jpeg"
+            },
+            2 : {
+                name: "Nerdy Girl",
+                description : "A girl who is a classic introvert learn to live the extrovert life, she is new to everything and stumbles often.",
+                img_path : "Images/nerdy-girl.jpeg"
+            },
+            3 : {
+                name: "Suzume",
+                description : "A door which leads to a realm beyond, a thrilling adventure of a teenage boy who fell down the rabbit hole.",
+                img_path : "Images/suzume.jpeg"
+            }
+        };
+
+        for(let i = 0; i < 4; i++){
+            let card = cards[i];
+            
+            let div = document.createElement("div");
+            div.classList.add("card");
+
+            let img_container = document.createElement("div");
+            img_container.classList.add("card-img-container");
+
+            let title = document.createElement("div");
+            title.classList.add("card-title");
+
+            let desc = document.createElement("div");
+            desc.classList.add("description-box");
+
+            let temp1 = document.createElement("img");
+            temp1.classList.add("card-img");
+            temp1.src = card.img_path;
+            img_container.appendChild(temp1);
+
+            let temp2 = document.createElement("p");
+            temp2.innerHTML = `${card.name}`
+            title.appendChild(temp2);
+
+            let temp3 = document.createElement("p");
+            temp3.innerHTML = `${card.description}`;
+            desc.appendChild(temp3);
+
+            div.appendChild(img_container);
+            div.appendChild(title);
+            div.appendChild(desc);
+
+            container.appendChild(div);
+        }
+        
+    </script>
+</body>
+</html>
