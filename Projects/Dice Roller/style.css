@@ -1,0 +1,77 @@
+* {
+    margin : 0;
+    padding : 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: hsl(200, 3%, 90%);
+}
+
+.container{
+    justify-self: center;
+    width: 300px;
+    height: 350px;
+    border: solid 1px black;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 5px 5px 15px black;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 30px;
+    color: hsl(100, 20%, 50%)
+}
+
+#inputLabel {
+    margin: 1rem;
+    font-size: 1.5rem;
+    color: rgb(0, 150, 150);
+    font-weight: bold;
+}
+
+#numOfDice{
+    margin-top : 2rem;
+    font-size: 1.3rem;
+    text-align: center;
+    border-radius: 5px;
+    border: solid 1px black;
+}
+
+#submit {
+    margin-top : 2rem;
+    font-size : 1.3rem;
+    padding: 10px;
+    border: none;
+    background-color: hsl(120, 34%, 61%);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#submit:hover{
+    background-color: hsl(120, 34%, 51%);
+}
+
+#errorLabel{
+    text-align: center;
+    font-size: 1.3rem;
+    margin-top : 15px;
+}
+
+.output {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    justify-self: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.diceImage {
+    width: 100px;
+    aspect-ratio: 1 / 1;
+}
