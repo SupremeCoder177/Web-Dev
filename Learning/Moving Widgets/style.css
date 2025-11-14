@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: gray;
+}
+
+.container {
+    position: relative;
+    top: 150px;
+    left: 100px;
+    width: 200px;
+    height: 400px;
+    background-color: hsl(240, 33%, 52%);
+    border: solid 1px black;
+    border-radius: 20px;
+    padding: 10px;
+    display: inline-block;
+}
+
+p {
+    text-align: center;
+    color: white;
+}
+
+.myButton {
+    font-size: 1.3rem;
+    border-radius: 0.4rem;
+    width: 100px;
+    height: 50px;
+    transition: all linear 100ms;
+}
+
+.myButton:hover{
+    transform: scale(1.1);
+}
+
+.myButton:active{
+    transform: scale(0.9);
+}
+
+.secondContainer {
+    position: relative;
+    display: inline-block;
+    top: 100px;
+    left: 300px;
+    width: 100px;
+    height: 100px;
+    padding: 1rem;
+    background-color: hsl(0, 51%, 58%);
+    border-radius: 1rem;
+    border: solid 1px black;
+}
+
+.buttons{
+    position: fixed;
+    background-color: hsl(0, 0%, 79%);;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100px;
+    box-shadow: 0 -5px 1.2rem black;
+    border: solid 1px black;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.sidebar {
+    display: flex;
+    position: absolute;
+    left: -200px;
+    top: 0px;
+    width: 200px;
+    height: 100vh;
+    background-color: hsl(0, 0%, 93%);
+    box-shadow: -5px 0 1.5rem black;
+    flex-wrap: wrap;
+}
+
+.icon{
+    border: solid 2px grey;
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border-radius: 15px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 5px 1.7rem black;
+    transition: all linear 100ms;
+}
+
+.icon:hover{
+    transform: scale(1.1);
+    box-shadow: 0 5px 2rem black;
+}

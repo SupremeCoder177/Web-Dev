@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Widgets</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <p style="margin-top: 2rem;">This is a widget which is going to slide</p>
+    </div>
+    
+    <div class="secondContainer">
+        <p>This one grows in Size</p>
+    </div>
+
+    <div class="sidebar">
+        <div class="icon">Home</div>
+        <div class="icon">About</div>
+        <div class="icon">Help</div>
+        <div class="icon">Nav</div>
+    </div>
+    
+    <div class="buttons">
+        <button onclick="move_widget()" class="myButton">Move</button>
+        <button onclick="grow_widget()" class="myButton">Grow</button>
+        <button onclick="show_sidebar()" class="myButton">SideBar</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
