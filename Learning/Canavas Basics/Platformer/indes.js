@@ -10,14 +10,14 @@ canvas.width = width;
 canvas.height = height;
 
 const MAP = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0],
-    [1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0],
-    [1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1],
+    [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0],
+    [1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0],
 ];
 
 class Player{
@@ -31,37 +31,46 @@ class Player{
         this.velocity = [0, 0];
     }
 
-    takeInput(key){
+    takeInput(key, pressed = true){
         switch(key){
             case "d":
-                this.velocity[0] = 3;
+                if(pressed) this.velocity[0] = 6;
+                else this.velocity[0] = 0;
                 break;
             case "a":
-                this.velocity[0] = -3;
+                if (pressed) this.velocity[0] = -6;
+                else this.velocity[0] = 0;
                 break;
             case "w":
+                this.velocity[1] = -20;
                 break;
         }
     }
 
     update(){
         this.velocity[1] += GRAV;
-
-        if(this.check_collide(0, this.velocity[1])){
-            this.velocity[1] = 0;
-        }   
-
-        this.x += this.velocity[0];
+        
         this.y += this.velocity[1];
+        if(this.check_collide()){
+            this.y -= this.velocity[1];
+            this.velocity[1] = 0;
+        }
+        
+        this.x += this.velocity[0];
+        if(this.check_collide()){
+            this.x -= this.velocity[0];
+            this.velocity[0] = 0;
+        }
+
     }
 
-    check_collide(delta_x, delta_y){
-        const tile_x = Math.floor((this.x + delta_x) / TILE_SIZE);
-        const tile_y = Math.floor((this.y + delta_y) / TILE_SIZE);
+    check_collide(){
+        const start_x = Math.floor(this.x / TILE_SIZE);
+        const start_y = Math.floor(this.y / TILE_SIZE);
         const end_x = Math.floor((this.x + this.width) / TILE_SIZE);
         const end_y = Math.floor((this.y + this.height) / TILE_SIZE);
-        
-        return MAP[tile_y][tile_x] === 1 || MAP[tile_y][end_x] === 1 || MAP[end_y][tile_x] === 1 || MAP[end_y][end_x] === 1;
+
+        return tiles.check_collide(start_x, start_y) || tiles.check_collide(start_x, end_y) || tiles.check_collide(end_x, start_y) || tiles.check_collide(end_x, end_y);
     }
 
     draw(){
@@ -79,19 +88,21 @@ class TileManager{
                 if(MAP[i][j] === 1) this.map.push([j, i]);
             }
         }
-
-        console.log(this.map);
     }
 
     draw(){
         context.fillStyle = "gray";
-        for(let tile in this.map){
+        this.map.forEach((tile) => {
             context.fillRect(tile[0] * TILE_SIZE, tile[1] * TILE_SIZE, TILE_SIZE, TILE_SIZE);
-        }
+        })
     }
 
     check_collide(x, y){
-        return [x, y] in this.map;
+        for(let i = 0; i < this.map.length; i++){
+            const tile = this.map[i];
+            if(tile[0] === x && tile[1] === y) return true;
+        }
+        return false;
     }
 }
 
@@ -115,6 +126,11 @@ let run = () => {
 
 window.addEventListener("keydown", (event) => {
     player.takeInput(event.key);
+})
+
+
+window.addEventListener("keyup", (event) => {
+    player.takeInput(event.key, pressed = false);
 })
 
 run();
