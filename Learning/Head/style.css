@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { background-color: hsl(0, 0%, 87%);}
+
+.container {
+    min-height: max-content;
+    min-width: max-content;
+    background-color: white;
+    border: solid 2px hsl(39, 100%, 90%);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 1.5rem;
+    margin: 2rem;
+}
+
+.heading {
+    width: 100%;
+    height: 70px;
+    border-radius: 10px;   
+}
+
+.heading-1 {
+    background-color: hsl(180, 100%, 89%);
+    border: solid 2px cyan;
+    box-shadow: 0 5px 0.3rem -0.2rem hsl(180, 100%, 50%);
+    height: 60px;
+    padding: 10px;
+}
+
+.link-1 {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    display: inline-block;
+    text-decoration: underline rgb(39, 185, 185) 3px;
+    font-weight: bolder;
+    color: black;
+    width: 100px;
+    height: max-content;
+    border-radius: 1rem;
+    transition: all linear 100ms;
+}
+
+.link-1:hover{
+    transform: scale(1.1);
+}
+
+.button-1 {
+    position: relative;
+    font-family: sans-serif;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    padding: 5px;
+    display: inline-block;
+    left: 45%;
+    top: -10%;
+    border: solid 1px orange;
+    background-color: hsl(39, 100%, 79%);
+    box-shadow: 0 5px hsl(39, 100%, 66%);
+    font-weight: bolder;
+    transition: top linear 10ms;
+    color: rgb(0, 0, 0);
+}
+
+.button-1:active{
+    top: 10%;
+    box-shadow: 0 2px hsl(39, 100%, 66%);
+}
+
+#name {
+    display: inline;
+    font-family: sans-serif;
+    margin-right: 10rem;
+    color: rgb(50, 50, 50);
+    text-shadow: 1.4px 1px hsla(19, 10%, 10%, 0.8);
+}
+
+.heading-2{
+    background-color: hsl(120, 100%, 84%);
+    border: solid 2px green;
+    box-shadow: -10px 10px darkgreen;
+}
+
+#name2{
+    text-align: center;
+    margin: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    text-shadow: 1px 1px hsla(19, 10%, 10%, 0.8)
+}
