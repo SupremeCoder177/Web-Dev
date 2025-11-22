@@ -11,8 +11,8 @@
     width: 100vw;
     height: 100vh;
     z-index: -1;
-    transition: all linear 100ms;
     background: linear-gradient(to bottom, rgb(45, 87, 165), rgb(171, 114, 194));
+    transition: all linear 100ms;
 }
 
 .container {

@@ -41,16 +41,23 @@ const cards = {
     6: "Images/img6.jpg"
 }
 
+
+function get_color_string(pixel){
+    return `rgba(${pixel["red"]}, ${pixel["green"]}, ${pixel["blue"]}, ${pixel["alpha"]})`;
+}
+
 function change_bg(){
-    const top_pixel_data = get_color_at(0, 0, this);
-    const bottom_pixel_data = get_color_at(this.width, this.height, this);
+    let x = Math.floor(Math.random() * this.width), y = 0;
+    let colors = [];
+    while(y < this.width){
+        colors.push(get_color_string(get_color_at(x, y, this)))
+        y += Math.floor(this.height / 5);
+        x = Math.floor(Math.random() * this.width);
+    }
 
-    const color_top = `rgba(${top_pixel_data["red"]}, ${top_pixel_data["green"]}, ${top_pixel_data["blue"]}, ${top_pixel_data["alpha"]})`;
-    const color_bottom = `rgba(${bottom_pixel_data["red"]}, ${bottom_pixel_data["green"]}, ${bottom_pixel_data["blue"]}, ${bottom_pixel_data["alpha"]})`;
-
-    bg_rect.style.background = `
-        linear-gradient(to bottom, ${color_top}, ${color_bottom})
-    `;
+    const full_color = `linear-gradient(to bottom, ${colors.join(",")})`;
+    
+    bg_rect.style.background = full_color;
 }
 
 function addCards(object){
