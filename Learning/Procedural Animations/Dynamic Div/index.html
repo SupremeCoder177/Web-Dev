@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Div</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container1"></div>
+    <div class="container2"></div>
+    <div class="container3" onfocus="card_flip()" onmouseleave="card_return()"></div>
+
+    <script>
+        function card_flip(){
+            if(document.querySelector(".container3").classList.contains("card-return")){
+                document.querySelector(".container3").classList.toggle("card-return");
+                document.querySelector(".container3").classList.add("card-flipper");
+            }
+        }
+
+        function card_return(){
+            document.querySelector(".container3").classList.toggle("card-flipper");
+            document.querySelector(".container3").classList.toggle("card-return");
+        }
+    </script>
+</body>
+</html>
