@@ -9,19 +9,26 @@
 <body>
     <div class="container1"></div>
     <div class="container2"></div>
-    <div class="container3" onfocus="card_flip()" onmouseleave="card_return()"></div>
-
+    <div class="card-container" onclick="card_flip()" onmouseleave="card_return()">
+        <div class="container3"></div>
+    </div>
+    <div class="container4">
+        <img src="Images/nerdy girl.jpeg" alt="A nerdy girl">
+    </div>
+    <div class="container5"></div>
     <script>
         function card_flip(){
             if(document.querySelector(".container3").classList.contains("card-return")){
                 document.querySelector(".container3").classList.toggle("card-return");
-                document.querySelector(".container3").classList.add("card-flipper");
             }
+            document.querySelector(".container3").classList.add("card-flipper");
         }
 
         function card_return(){
-            document.querySelector(".container3").classList.toggle("card-flipper");
-            document.querySelector(".container3").classList.toggle("card-return");
+            if(document.querySelector(".container3").classList.contains("card-flipper")){
+                document.querySelector(".container3").classList.toggle("card-flipper");
+                document.querySelector(".container3").classList.toggle("card-return");
+            }
         }
     </script>
 </body>

@@ -32,6 +32,11 @@ body { background-color: #131341; }
     animation: roller 2s linear infinite alternate;
 }
 
+.card-container {
+    width: 300px;
+    height: 300px;
+}
+
 .container3 {
     width: 200px;
     height: 200px;
@@ -79,10 +84,12 @@ body { background-color: #131341; }
 @keyframes roller {
     0% {
         transform: translateX(0px);
+        border-radius: 0%;
     }
 
     100% {
         transform: translateX(500px) rotate(360deg);
+        border-radius: 50%;
     }
 }
 
@@ -115,3 +122,43 @@ body { background-color: #131341; }
     max-width: 150px;
     object-fit: contain;
 }
+
+.container4 {
+    width: 100px;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 250px;
+    transition: transform linear 100ms;
+}
+
+.container4 > img {
+    object-fit: contain;
+    max-width: 100%;
+    min-height: 100%;
+    border-radius: inherit;
+    filter: blur(0.5rem);
+    transition: all linear 0.1s;
+}
+
+.container4:hover {
+    transform: scale(1.05) rotate(-5deg);
+    
+}
+
+.container4 > img:hover{
+    filter: blur(0rem);
+}
+
+.container5 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 300px;
+    left: 10px;
+    background-color: white;
+}
+
