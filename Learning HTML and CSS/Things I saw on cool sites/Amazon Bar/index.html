@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Bar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h1>Amazon EC2</h1>
+        <div class="hover"></div>
+        <div class="buttons">
+            <a href="" class="nav-btn">Overview</a>
+            <a href="" class="nav-btn">Features</a>
+            <a href="" class="nav-btn">Pricing</a>
+            <a class="sub-menu-loader nav-btn">Instance Types</a>
+            <a href="" class="nav-btn">FAQs</a>
+            <a href="" class="nav-btn">Getting Started</a>
+            <a class="sub-menu-loader nav-btn">Resources</a>
+        </div>
+        <div class="sub-menu">
+                <a href="">Instance Type Details</a>
+                <a href="">Instance Type Explorer</a>
+        </div>
+        <div class="sub-menu">
+                <a href="">Developer Resources</a>
+                <a href="">Product Videos</a>
+                <a href="">Customers</a>
+                <a href="">Cost Optimization</a>
+        </div>
+    </nav>
+
+    <script>
+        const sub_btns = document.querySelectorAll(".sub-menu-loader");
+
+        for(let i = 0; i < sub_btns.length; i++){
+            sub_btns[i].addEventListener("click", () => {
+                this.classlist.toggle(".show-menu");
+            })
+        }
+
+        const nav_btns = document.querySelectorAll(".nav-btn");
+
+        const hover_btn = document.querySelector(".hover");
+
+        nav_btns.forEach(() => {
+            const rect = 
+
+            console.log(rect);
+        })
+        
+
+    </script>
+</body>
+</html>
